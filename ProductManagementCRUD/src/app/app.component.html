@@ -4,7 +4,7 @@
   <mat-toolbar-row>
     <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
     <span>TMJ Mobile</span>
-    
+
     <span class="example-spacer"></span>
     <button
       mat-icon-button
@@ -16,5 +16,7 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-toolbar-row>
-  <button mat-raised-button color="warn">Add New Product</button>
+  <button mat-raised-button color="warn" (click)="openDialog()">
+    Add New Product
+  </button>
 </mat-toolbar-row>
