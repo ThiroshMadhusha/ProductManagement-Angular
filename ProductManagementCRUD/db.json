@@ -1,7 +1,7 @@
 {
   "productList": [
     {
-      "productName": "Laptop",
+      "productName": "Huawei",
       "category": "Watch",
       "freshness": "Brand New",
       "qty": 1,
@@ -11,7 +11,7 @@
       "id": 1
     },
     {
-      "productName": "Laptop",
+      "productName": "Samsung",
       "category": "Watch",
       "freshness": "Brand New",
       "qty": 1,
