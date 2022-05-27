@@ -9,6 +9,56 @@
       "date": "2022-05-26T18:30:00.000Z",
       "comment": "Sold",
       "id": 1
+    },
+    {
+      "productName": "Laptop",
+      "category": "Watch",
+      "freshness": "Brand New",
+      "qty": 1,
+      "price": 50000,
+      "date": "2022-05-26T18:30:00.000Z",
+      "comment": "Sold",
+      "id": 2
+    },
+    {
+      "productName": "Tablet",
+      "category": "Mobile Phone",
+      "freshness": "Second Hand",
+      "qty": 2,
+      "price": 100005,
+      "date": "2022-05-26T18:30:00.000Z",
+      "comment": "Good",
+      "id": 3
+    },
+    {
+      "productName": "Tablet",
+      "category": "Laptop",
+      "freshness": "Brand New",
+      "qty": 2,
+      "price": 500000,
+      "date": "2022-05-26T18:30:00.000Z",
+      "comment": "Supper",
+      "id": 4
+    },
+    {
+      "productName": "Laptop",
+      "category": "Tablet",
+      "freshness": "Second Hand",
+      "qty": 3,
+      "price": 250000,
+      "date": "2022-05-26T18:30:00.000Z",
+      "comment": "Supper",
+      "id": 5
+    },
+    {
+      "productName": "Apple",
+      "category": "Mobile Phone",
+      "freshness": "Brand New",
+      "qty": 4,
+      "price": 1500000,
+      "date": "2022-05-26T18:30:00.000Z",
+      "comment": "Amazing",
+      "id": 6
     }
   ],
   "comments": [
