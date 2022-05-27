@@ -1,15 +1,17 @@
 <h1 mat-dialog-title>Add Product Form</h1>
 <div mat-dialog-content>
   <form [formGroup]="productForm">
+
+
     <mat-form-field appearance="outline">
       <mat-label>Product Name</mat-label>
       <mat-select formControlName="productName">
-        <mat-option value="Mobile Phone">Samsung</mat-option>
-        <mat-option value="Watch">Apple</mat-option>
-        <mat-option value="Laptop">Huawei</mat-option>
-        <mat-option value="Tablet">Xiomi</mat-option>
-        <mat-option value="Tablet">POCO</mat-option>
-        <mat-option value="Tablet">Windows</mat-option>
+        <mat-option value="Samsung">Samsung</mat-option>
+        <mat-option value="Apple">Apple</mat-option>
+        <mat-option value="Huawei">Huawei</mat-option>
+        <mat-option value="Xiomi">Xiomi</mat-option>
+        <mat-option value="POCO">POCO</mat-option>
+        <mat-option value="Windows">Windows</mat-option>
       </mat-select>
     </mat-form-field>
 
