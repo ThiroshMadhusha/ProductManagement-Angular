@@ -1,64 +1,88 @@
 <h1 mat-dialog-title>Add Product Form</h1>
 <div mat-dialog-content>
-  <mat-form-field appearance="outline">
-    <mat-label>Product Name</mat-label>
-    <mat-select>
-      <mat-option value="Mobile Phone">Samsung</mat-option>
-      <mat-option value="Watch">Apple</mat-option>
-      <mat-option value="Laptop">Huawei</mat-option>
-      <mat-option value="Tablet">Xiomi</mat-option>
-      <mat-option value="Tablet">POCO</mat-option>
-      <mat-option value="Tablet">Windows</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field appearance="outline">
-    <mat-label>Product Category</mat-label>
-    <mat-select>
-      <mat-option value="Mobile Phone">Mobile Phone</mat-option>
-      <mat-option value="Watch">Watch</mat-option>
-      <mat-option value="Laptop">Laptop</mat-option>
-      <mat-option value="Tablet">Tablet</mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <label for=""><h1>Product Quality</h1></label>
-  <mat-radio-group class="example-radio-group">
-    <mat-radio-button
-      class="example-radio-button"
-      *ngFor="let fresh of qualityList"
-      [value]="fresh"
-    >
-      {{ fresh }}
-    </mat-radio-button>
-  </mat-radio-group>
-  <mat-form-field appearance="outline">
-    <mat-label>Quantity</mat-label>
-    <input matInput type="number" min="1" max="" placeholder="Input Quantity" />
-  </mat-form-field>
-  <mat-form-field appearance="outline">
-    <mat-label>Price</mat-label>
-    <input matInput type="number" min="1" max="" placeholder="Input Price" />
-  </mat-form-field>
-
-  <mat-form-field appearance="outline">
-    <mat-label>Date</mat-label>
-    <mat-form-field appearance="fill">
-      <mat-label>Choose a date</mat-label>
-      <input matInput [matDatepicker]="picker" />
-      <mat-hint>MM/DD/YYYY</mat-hint>
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
+  <form [formGroup]="productForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Product Name</mat-label>
+      <mat-select formControlName="productName">
+        <mat-option value="Samsung">Samsung</mat-option>
+        <mat-option value="Apple">Apple</mat-option>
+        <mat-option value="Huawei">Huawei</mat-option>
+        <mat-option value="Xiomi">Xiomi</mat-option>
+        <mat-option value="POCO">POCO</mat-option>
+        <mat-option value="Windows">Windows</mat-option>
+      </mat-select>
     </mat-form-field>
-  </mat-form-field>
-  <mat-form-field appearance="outline">
-    <mat-label>Comment</mat-label>
-    <textarea matInput></textarea>
-  </mat-form-field>
-</div>
 
+    <mat-form-field appearance="outline">
+      <mat-label>Product Category</mat-label>
+      <mat-select formControlName="category">
+        <mat-option value="Mobile Phone">Mobile Phone</mat-option>
+        <mat-option value="Watch">Watch</mat-option>
+        <mat-option value="Laptop">Laptop</mat-option>
+        <mat-option value="Tablet">Tablet</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <label for=""><h1>Product Quality</h1></label>
+    <mat-radio-group class="example-radio-group" formControlName="freshness">
+      <mat-radio-button
+        class="example-radio-button"
+        *ngFor="let fresh of qualityList"
+        [value]="fresh"
+      >
+        {{ fresh }}
+      </mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Quantity</mat-label>
+      <input
+        formControlName="qty"
+        matInput
+        type="number"
+        min="1"
+        max=""
+        placeholder="Input Quantity"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Price</mat-label>
+      <input
+        formControlName="price"
+        matInput
+        type="number"
+        min="1"
+        max=""
+        placeholder="Input Price"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Date</mat-label>
+      <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input formControlName="date" matInput [matDatepicker]="picker" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Comment</mat-label>
+      <textarea formControlName="comment" matInput></textarea>
+    </mat-form-field>
+  </form>
+</div>
 <div mat-dialog-action [align]="'end'">
   <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
-  <button style="margin-left: 8px" mat-raised-button color="primary">
+  <button
+    style="margin-left: 8px"
+    mat-raised-button
+    color="primary"
+    (click)="addProduct()"
+  >
     Save
   </button>
 </div>
