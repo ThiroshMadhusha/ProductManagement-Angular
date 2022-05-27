@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from '../services/api.service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog',
@@ -10,7 +11,11 @@ import { ApiService } from '../services/api.service';
 export class DialogComponent implements OnInit {
   qualityList = ['Brand New', 'Second Hand', 'Refurbished'];
   productForm!: FormGroup;
-  constructor(private formBuilder: FormBuilder, private api: ApiService) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private api: ApiService,
+    private dialogRef: MatDialogRef<DialogComponent>
+  ) {}
 
   ngOnInit(): void {
     this.productForm = this.formBuilder.group({
@@ -26,15 +31,16 @@ export class DialogComponent implements OnInit {
 
   addProduct() {
     if (this.productForm.valid) {
-      this.api.postProduct(this.productForm.value)
-        .subscribe({
-          next: (res) => {
-            alert("Product Added Sussessfully..!")
-          },
-          error: () => {
-            alert("Error While Adding The Product. Try Again ..!")
-          }
-      })
+      this.api.postProduct(this.productForm.value).subscribe({
+        next: (res) => {
+          alert('Product Added Sussessfully..!');
+          this.productForm.reset();
+          this.dialogRef.close('save');
+        },
+        error: () => {
+          alert('Error While Adding The Product. Try Again ..!');
+        },
+      });
     }
   }
 }
