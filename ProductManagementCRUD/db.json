@@ -1,0 +1,24 @@
+{
+  "productList": [
+    {
+      "productName": "Laptop",
+      "category": "Watch",
+      "freshness": "Brand New",
+      "qty": 1,
+      "price": 50000,
+      "date": "2022-05-26T18:30:00.000Z",
+      "comment": "Sold",
+      "id": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
