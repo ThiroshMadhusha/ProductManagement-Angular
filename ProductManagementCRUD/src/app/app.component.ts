@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
     'price',
     'date',
     'comment',
+    'action',
   ];
   dataSource!: MatTableDataSource<any>;
 
