@@ -7,17 +7,20 @@ import { Injectable } from '@angular/core';
 export class ApiService {
   constructor(private http: HttpClient) {}
 
+  // Create Insert Crud Operation Api Path
   postProduct(data: any) {
     return this.http.post<any>('http://localhost:3000/productList/', data);
   }
-
+  // Create Read Crud Operation Api Path
   getProduct() {
     return this.http.get<any>('http://localhost:3000/productList/');
   }
-// update product api route
+  // Create Update Crud Operation Api Path
   putProduct(data: any, id: number) {
     return this.http.put<any>('http://localhost:3000/productList/' + id, data);
   }
-
-
+  // Create Delete Crud Operation Api Path
+  deleteProduct(id: number) {
+    return this.http.delete<any>('http://localhost:3000/productList/' + id);
+  }
 }
